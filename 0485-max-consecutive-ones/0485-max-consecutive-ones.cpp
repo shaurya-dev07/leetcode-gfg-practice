@@ -7,9 +7,7 @@ public:
         for(int i=0; i<nums.size(); i++){
             if(nums[i]==1){
                 count++;
-                if(count > maxCount){
-                    maxCount = count;
-                }
+                maxCount = max(maxCount,count);
             }
             else{
                 count = 0;
