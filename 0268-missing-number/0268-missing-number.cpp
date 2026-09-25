@@ -1,20 +1,13 @@
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        
-        for(int i= 0; i<nums.size()+1; i++){
-            bool found = false;
-            for(int j = 0; j<nums.size(); j++){
-                if(nums[j]==i){
-                   found  = true;
-                   break;
-                }
-            }
-            if(found == false){
-                return i;
-            }
+        int n = nums.size();
+        int ans = n;
+
+        for(int i=0; i<n; i++){
+            ans ^= nums[i]^i;
         }
-        return -1;
+        return ans;
     }
 };
 
